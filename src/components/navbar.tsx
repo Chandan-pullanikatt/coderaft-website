@@ -7,6 +7,7 @@ import { ThemeToggle } from "./theme-toggle"
 import { motion } from "framer-motion"
 
 const navItems = [
+  { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Process", href: "/process" },
@@ -45,13 +46,15 @@ export function Navbar() {
           </div>
           <nav className="flex items-center space-x-4">
             <ThemeToggle />
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,212,255,0.6)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-[#00D4FF] to-[#06B6D4] text-[#0A2540] hover:opacity-90 font-bold border-0 h-10 px-6 rounded-full shadow-[0_0_10px_rgba(0,212,255,0.4)] transition-all text-sm"
-            >
-              Get in Touch
-            </motion.button>
+            <Link href="/contact">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0,212,255,0.6)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-[#00D4FF] to-[#06B6D4] text-[#0A2540] hover:opacity-90 font-bold border-0 h-10 px-6 rounded-full shadow-[0_0_10px_rgba(0,212,255,0.4)] transition-all text-sm"
+              >
+                Get in Touch
+              </motion.button>
+            </Link>
           </nav>
         </div>
       </div>
